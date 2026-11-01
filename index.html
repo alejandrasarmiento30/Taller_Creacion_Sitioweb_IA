@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Plataforma de estudio colaborativo y productividad para universitarios.">
+    <title>FocusCampus | Potencia tu Estudio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Encabezado y Navegación Principal -->
+    <header class="main-header">
+        <div class="container nav-container">
+            <a href="#" class="brand-logo">Focus<span>Campus</span></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="#features" class="nav-link">Beneficios</a></li>
+                    <li><a href="#about" class="nav-link">Nosotros</a></li>
+                    <li><a href="#registro" class="nav-link btn-link">Unirse</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Sección Hero -->
+        <section class="hero-section">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <span class="badge">Acceso Anticipado</span>
+                    <h1>Estudia en equipo sin perder la concentración</h1>
+                    <p>Organiza tus sesiones, sincroniza métodos de estudio y cumple tus metas académicas con estudiantes de tu misma carrera.</p>
+                    <div class="hero-actions">
+                        <a href="#registro" class="btn btn-primary">Reservar mi lugar</a>
+                        <a href="#features" class="btn btn-secondary">Explorar más</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Beneficios / Features -->
+        <section class="features-section" id="features">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Diseñado para el ritmo universitario</h2>
+                    <p>Herramientas prácticas para optimizar tu tiempo de estudio diario.</p>
+                </div>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">⏱️</div>
+                        <h3>Salas Pomodoro</h3>
+                        <p>Bloques de concentración compartidos con descansos sincronizados para trabajar en grupo sin distracciones.</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">📚</div>
+                        <h3>Recursos Ordenados</h3>
+                        <p>Almacena y clasifica apuntes, lecturas y enlaces importantes por asignatura de forma limpia.</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">📊</div>
+                        <h3>Métricas de Avance</h3>
+                        <p>Visualiza tus horas efectivas de estudio y el cumplimiento de tareas a lo largo del semestre.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Formulario de Registro -->
+        <section class="register-section" id="registro">
+            <div class="container">
+                <div class="form-wrapper">
+                    <div class="section-title">
+                        <h2>Únete al prelanzamiento</h2>
+                        <p>Cupos limitados para la versión beta cerrada. Asegura tu acceso.</p>
+                    </div>
+                    <form id="leadForm" class="lead-form" novalidate>
+                        <div class="form-group">
+                            <label for="userName">Nombre completo</label>
+                            <input type="text" id="userName" name="userName" placeholder="Ej. Carlos Mendoza" required autocomplete="name">
+                            <span class="error-msg" id="nameError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="userEmail">Correo electrónico universitario o personal</label>
+                            <input type="email" id="userEmail" name="userEmail" placeholder="usuario@universidad.edu.co" required autocomplete="email">
+                            <span class="error-msg" id="emailError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="career">Área o Carrera</label>
+                            <select id="career" name="career" required>
+                                <option value="" disabled selected>Selecciona tu área</option>
+                                <option value="ingenieria">Ingeniería y Tecnología</option>
+                                <option value="salud">Ciencias de la Salud</option>
+                                <option value="sociales">Ciencias Sociales y Humanidades</option>
+                                <option value="otra">Otra disciplina</option>
+                            </select>
+                            <span class="error-msg" id="careerError"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block" id="submitBtn">Completar Registro</button>
+                    </form>
+                    <div class="form-feedback hidden" id="formFeedback" role="status" aria-live="polite"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <p> 2026 FocusCampus. Proyecto académico de maquetación web accesible.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

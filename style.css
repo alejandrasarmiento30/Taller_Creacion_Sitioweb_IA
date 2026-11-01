@@ -1,0 +1,416 @@
+/* ==========================================================================
+   Variables CSS y Reset Base (Mobile-First)
+   ========================================================================== */
+:root {
+  --bg-main: #0f172a;
+  --bg-card: #1e293b;
+  --bg-card-hover: #334155;
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --success-bg: #14532d;
+  --success-text: #bbf7d0;
+  --error: #f87171;
+  --max-w: 1100px;
+  --radius: 12px;
+  --transition: 0.25s ease-in-out;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 100%;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   Header y Navegación
+   ========================================================================== */
+.main-header {
+  background-color: rgba(15, 23, 42, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.brand-logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+  text-decoration: none;
+}
+
+.brand-logo span {
+  color: var(--primary);
+}
+
+.nav-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  width: 24px;
+  height: 2px;
+  background-color: var(--text-main);
+  transition: var(--transition);
+  display: block;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: "";
+}
+
+.hamburger::before {
+  transform: translateY(-7px);
+}
+
+.hamburger::after {
+  transform: translateY(5px);
+}
+
+.nav-menu {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  background-color: var(--bg-card);
+  display: none;
+  flex-direction: column;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-menu.active {
+  display: flex;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.nav-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--text-main);
+}
+
+/* ==========================================================================
+   Botones y Títulos
+   ========================================================================== */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background-color: var(--primary-hover);
+  outline: 2px solid #ffffff;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--text-muted);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.section-title h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-title p {
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero-section {
+  padding: 4rem 0 3rem;
+  text-align: center;
+}
+
+.badge {
+  background-color: rgba(99, 102, 241, 0.15);
+  color: var(--primary);
+  padding: 0.35rem 0.85rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 1.25rem;
+}
+
+.hero-content h1 {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+}
+
+.hero-content p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ==========================================================================
+   Features (Grid)
+   ========================================================================== */
+.features-section {
+  padding: 4rem 0;
+  background-color: rgba(30, 41, 59, 0.4);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.feature-card {
+  background-color: var(--bg-card);
+  padding: 1.75rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform var(--transition), background-color var(--transition);
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  background-color: var(--bg-card-hover);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.feature-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   Formulario de Registro
+   ========================================================================== */
+.register-section {
+  padding: 4rem 0;
+}
+
+.form-wrapper {
+  max-width: 520px;
+  margin: 0 auto;
+  background-color: var(--bg-card);
+  padding: 2rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  color: var(--text-main);
+}
+
+.form-group input,
+.form-group select {
+  background-color: var(--bg-main);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text-main);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+.form-group input.input-error,
+.form-group select.input-error {
+  border-color: var(--error);
+}
+
+.error-msg {
+  color: var(--error);
+  font-size: 0.8rem;
+  margin-top: 0.35rem;
+  min-height: 1.1rem;
+}
+
+.form-feedback {
+  margin-top: 1.25rem;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.form-feedback.success {
+  background-color: var(--success-bg);
+  color: var(--success-text);
+}
+
+.hidden {
+  display: none;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.main-footer {
+  padding: 2.5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Breakpoints Responsive
+   ========================================================================== */
+@media (min-width: 768px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-menu {
+    position: static;
+    display: flex;
+    width: auto;
+    background: transparent;
+    padding: 0;
+    border: none;
+  }
+
+  .nav-list {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.75rem;
+  }
+
+  .hero-actions {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-section {
+    padding: 6rem 0 5rem;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .form-wrapper {
+    padding: 2.5rem;
+  }
+}
